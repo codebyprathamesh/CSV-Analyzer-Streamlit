@@ -5,6 +5,13 @@ This tool performs data cleaning, visualization, and generates insights without 
 
 ---
 
+## 🌐 Live Demo
+
+🚀 **Try the app here:**  
+👉https://csvanalyzerinsights.streamlit.app/#insights
+
+---
+
 ## 🚀 Features
 
 - 📁 Upload any CSV file  
@@ -36,8 +43,7 @@ This tool performs data cleaning, visualization, and generates insights without 
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/csv-analyzer-streamlit.git  
-cd csv-analyzer-streamlit  
+git clone https://github.com/codebyprathamesh/CSV-Analyzer-Streamlit.git
 
 2. Install dependencies:
 
@@ -46,12 +52,6 @@ pip install -r requirements.txt
 3. Run the app:
 
 streamlit run app.py  
-
----
-
-## 🌐 Live Demo
-
-👉 Add your deployed app link here (after deployment)
 
 ---
 
@@ -85,7 +85,7 @@ streamlit run app.py
 
 ## ⚠️ Note
 
-This project was built as a learning project with guidance and iterative debugging to understand real-world data analysis workflows.
+Some datasets may contain extreme outliers or weak correlations, which can affect visualizations and insights. This reflects real-world data behavior.
 
 ---
 
