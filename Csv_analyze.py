@@ -86,7 +86,15 @@ if uploaded_csv is not None:
         selected_num = st.selectbox("Numerical", numerical)
 
     plt.figure()
-    sns.boxplot(x=df[selected_cat], y=df[selected_num])
+
+    if df[selected_num].min() >= 0:
+        y_data = np.log1p(df[selected_num])
+        sns.boxplot(x=df[selected_cat], y=y_data)
+        plt.ylabel(f"log({selected_num})")
+    else:
+        sns.boxplot(x=df[selected_cat], y=df[selected_num])
+        plt.ylabel(selected_num)
+
     plt.title(f"{selected_cat} vs {selected_num}")
     st.pyplot(plt)
     plt.close()
