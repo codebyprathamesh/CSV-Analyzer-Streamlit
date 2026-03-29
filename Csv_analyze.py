@@ -111,29 +111,29 @@ if uploaded_csv is not None:
 
     st.subheader("💡 Insights")
 
-if target in numeric_df.columns:
-    corr = numeric_df.corr()[target].sort_values(ascending=False)
+    if target in numeric_df.columns:
+        corr = numeric_df.corr()[target].sort_values(ascending=False)
 
-    found = False
+        found = False
 
-    for col in corr.index:
-        if col == target:
-            continue
+        for col in corr.index:
+            if col == target:
+                continue
 
-        if df[col].nunique() == len(df):
-            continue
+            if df[col].nunique() == len(df):
+                continue
 
-        value = corr[col]
+            value = corr[col]
 
-        if abs(value) > 0.2:
-            found = True
-            if value > 0:
-                st.success(f"{col} increases {target}")
-            else:
-                st.error(f"{col} decreases {target}")
+            if abs(value) > 0.2:
+                found = True
+                if value > 0:
+                    st.success(f"{col} increases {target}")
+                else:
+                    st.error(f"{col} decreases {target}")
 
-    if not found:
-        st.info("No strong relationships found in the dataset")
+        if not found:
+            st.info("No strong relationships found in the dataset")
 
-else:
-    st.warning("Target column is not numeric. Cannot generate insights.")
+    else:
+        st.warning("Target column is not numeric. Cannot generate insights.")
